@@ -1,0 +1,106 @@
+﻿Grimoire
+How to Guide
+Linux Terminal Commands
+	1. Files | directories
+        	- create file – touch file_name.ext
+        	- create directory – mkdir directory_name
+        	- list files and directories – ls
+			-l: include operation on file
+			-al: include hidden files
+        	- go into directory – cd directory_path
+        	- change access permissions – chmod +rwx (read, write, x) file_name.ext
+        	- text editors: nano|libreoffice file_name.ext
+        	- text editors: nano|libreoffice file_name.ext
+		- have computer talk back: echo
+			- do equation: echo $((equation))
+		- search for word in file: grep
+
+	2. Database
+	        - Postgres
+	        - start – sudo systemctl start postgresql
+	        - status -  sudo systemctl status postgresql
+	        - stop -  sudo systemctl stop postgresql
+	        - run sql commands – psql
+	            ▪ create db, table etc
+	            ▪ *make sure you put a ; at the end of all you sql statements
+	        - login as postgres user - sudo -u postgres
+	        - login and run sql commands - sude -u postgres psql
+	3. Network
+	        - get connection information - sudo netstat
+	        - ex: sudo netstat -plunt | grep postgres
+	4. Application | Packages
+	        - install application – sudo pacman -S package_name
+	        - uninstall application - sudo pacman -Rs <package_name>
+	5. Extra
+	        - Pause – Sleep amount_of_seconds
+	        - multiple commands - &&
+	        - stop any command – ctrl + c
+		- which user am I currently - whoami
+		- exit - exit (0 no error | 1 with error) 
+	6. Built-in bash variables
+		- generate random number between 0-32767 - $RANDOM
+		- which shell I'm using - $SHELL
+		- which user am I - $USER
+		- current directory - $PWD
+		- name of local machine - $HOSTNAME
+		- create varibales on command - varible_name="value" (in command line)
+		- how to use variable from command line in child process - export varible_name 	
+
+Bash Script
+	1. create variable - $variable_name
+	2. set input into variable – read varibale_name
+	3. pass in argument – variable_name=$1 (number of position of parameter – when you call bash script)
+	4.if condition - 
+		if [[ condition ]]; then 
+			*what you want to execute* 
+		elif 
+			*execute*
+		else 
+			*execute* 
+	  	fi
+	5. comparison operators: ==, >= (-ge), <=(-le), ||, &&
+ 	6. switch|match statement - 
+		case $variable_name in
+			1) *execution*;; 
+			2) *execution*;; 
+			etc 
+		esac 
+	7. while loop - 
+		while [[ condition ]]
+		do 
+			*what ever you want ot execute*
+		done
+
+Bash Files
+	1. bashrc: a script that will run every time you login
+
+Nano Text Editor
+	1. open/create file - nano filename
+		-show lines: -l
+	2. save changes - ctrl + o
+	3, exit nano - ctrl + x
+	4. search text - ctrl + w 
+	5. replace text - ctrl + \
+	6. cut current line - ctrl + k
+	7. paste line/text - ctrl + u
+	8. undo - alt + u
+	9. redo - alt + e
+	10. comment - #  
+	11. go to sepectific line: ctrl + /
+Konsole
+	1. new tab - ctrl + shift + t
+	2. new window - ctrl + shift + n
+	3. move to next tab - shift + arrow key
+
+git
+	1. download git for archlinux: sudo pacman -S git
+	2. set git name:
+		- git config --global user.email "you@example.com"
+ 		- git config --global user.name "Your Name"
+	3. clone repository: git clone url
+	4. create repository: git init
+	5. add changes: git add file (. for all)
+	6. commit changes: git commit -m "message to add"
+	7. see saved commits: git log
+	8. got back to previous commits: git checkout commit_code
+
